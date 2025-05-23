@@ -64,7 +64,7 @@
           <div class="list-group">
             <div class="list-group-item" id="introduction">
               <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
-              <h4>About PARROT</h4>
+              <h4>About PARROT 🦜</h4>
               <img
                 src="https://badges.toozhao.com/badges/01HFXP6JKNBG5AW3Y5B95DK568/blue.svg"
               />
@@ -73,12 +73,14 @@
                 PARROT (<b>P</b>ractical <b>A</b>nd <b>R</b>ealistic Benchma<b>R</b>k for Cr<b>O</b>ss-System SQL <b>T</b>ranslation)
                 was created to support the task of Cross-System SQL Translation (i.e., SQL-to-SQL translation), 
                 which involves adapting a query written for one database system into its functionally equivalent form for another.
-                It comprises 598 translation pairs from 38 open-source benchmarks and real-world business services, 
-                specifically prepared to challenge system-specific SQL understanding.
                 <!-- The dataset includes three extra problems that especially resonates with real-world scenarios:
               <b>1)</b> the necessity to incorporate external knowledge into parsers; <b>2)</b> the need for parsers to
               reason over 'dirty' values;
               and <b>3)</b> the requirment to consider efficiency while executing SQLs.  -->
+              </p>
+              <p>
+                The main dataset comprises 598 translation pairs from 38 open-source benchmarks and real-world business services, 
+                specifically prepared to challenge system-specific SQL understanding.
               </p>
               <!-- buttons below -->
               <div id="button-group">
@@ -232,7 +234,7 @@
                            padding: 2px 4px;
                            border-radius: 5px;
                            "
-                         ><strong style="color: #ffe7ce">May. 16, 2025:</strong></span> We have released PARROT-1.0-open (598 translation pairs from 38 open-source benchmarks and real-world business services). 
+                         ><strong style="color: #ffe7ce">May. 16, 2025:</strong></span> We have released PARROT-1.0 (28,003 translation pairs from 38 open-source benchmarks for extensive syntax testing). 
                          <!-- Check out the data in <a href="https://huggingface.co/datasets/birdsql/bird-critic-1.0-open">Hugging Face</a> and the newest code in <a href="https://github.com/bird-bench/BIRD-CRITIC-1">GitHub</a>. The full set of PostgreSQL will be released 1 week later. -->
                         <!-- It seems that bird-critic is a challenging reasoning tasks for text-to-SQL since all top-peforming models are reasoning-based models. Have fun! Thanks! -->
                        </li>
@@ -516,7 +518,9 @@
               <h4>Surprise from PARROT</h4>
               <p>
                 <!-- <b>1. Large and Dirty values:</b>   -->
-                LLMS achieve lower than 38.53% accuracy on average.
+                We have experimented different LLMs in terms of (1) usage license, (2) parameter scale, and (3) task scope.
+                These LLMs attain an average accuracy below <b>38.53 %</b>, 
+                underscoring the substantial challenges inherent to SQL-to-SQL translation and the pressing need for more advanced techniques.
               </p>
               <!-- <img
                 src="./img/dirty_1.png"
@@ -672,14 +676,13 @@
             <div class="list-group-item" id="illustration">
               <h3>PARROT</h3>
               <p>
-                A <b>Lite</b> version of developtment dataset, which is designed
-                to facilitate efficient and cost-effective development cycles,
-                 especially for testing and refining SQL query generation models. For more details, please visit the <a href="https://github.com/weAIDB/PARROT">GitHub repository</a>.
-                 For updating Leaderboard, please make sure your paper or resource is public available and submit a PR.
+                We have publicly released PARROT along with detailed usage instructions.
+                For more details, please visit the <a href="https://github.com/weAIDB/PARROT">GitHub repository</a>.
+                To update the leaderboard, ensure that your paper or resource is publicly accessible and submit a pull request.
               </p>
             </div>
             <div class="card card-outline-secondary">
-              <div class="card-header">Leaderboard - Dialect Compatability (EX)</div>
+              <div class="card-header">Leaderboard - Dialect Compatability (Acc<sub>EX</sub>)</div>
               <div class="table-wrapper">
                 <table class="table" id="ex-table">
                   <thead class="thead-light">
@@ -706,16 +709,8 @@
                       >
                         Size
                       </th>
-                      <th
-                        scope="col"
-                        rowspan="1"
-                        class="align-middle text-center"
-                      >
-                        Oracle Knowledge
-                      </th>
-                      <th scope="col" colspan="1" class="text-center">Dev (%)</th>
                       <th scope="col" colspan="1" class="text-center">
-                        Test (%)
+                        Accuracy (%)
                       </th>
                     </tr>
                   </thead>
@@ -725,14 +720,12 @@
                       <td class="align-middle text-center">
                         Human Performance<br />
                         <span class="affiliation"
-                          >Data Engineers + DB Students</span
+                          >Translation Tool + Human DBAs</span
                         ><br /><a href="" class="paperlink"></a>
                       </td>
                       <td class="align-middle text-center"></td>
                       <td class="align-middle text-center"></td>
-                      <td class="align-middle text-center">✔️</td>
-                      <td class="align-middle text-center"></td>
-                      <td class="align-middle text-center"><b>92.96</b></td>
+                      <td class="align-middle text-center"><b>> 90</b></td>
                     </tr>
 
                     <!-- <tr class="table-success">
@@ -750,59 +743,109 @@
 
                   <tr>
                     <td scope="row" class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Mar 11, 2025</span>
+                      <!-- <span class="badge badge-secondary">Mar 11, 2025</span> -->
                     </td>
-                    <td class="align-middle text-center">AskData + GPT-4o<br>
-                      <span class="affiliation">AT&T CDO - DSAIR</span>
-                    </td>
-                    <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">75.36</td>
-                    <td class="align-middle text-center"><b>77.14</b></td>
-                  </tr>
-
-
-                  <tr>
-                    <td scope="row" class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Apr 16, 2025</span>
-                    </td>
-                    <td class="align-middle text-center">CHASE-SQL + Gemini<br>
-                      <span class="affiliation">Google Cloud</span><br><a href="https://arxiv.org/abs/2410.01943" class="paperlink">[Pourreza et al. '24]</a>
+                    <td class="align-middle text-center">GPT-4o<br>
+                      <span class="affiliation">OpenAI</span>
                     </td>
                     <td class="align-middle text-center"></td>
                     <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">74.90</td>
-                    <td class="align-middle text-center">76.02</td>
+                    <td class="align-middle text-center"><b>53.32</b></td>
                   </tr>
 
                   <tr>
                     <td scope="row" class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Feb 27, 2025</span>
+                      <!-- <span class="badge badge-secondary">Apr 16, 2025</span> -->
                     </td>
-                    <td class="align-middle text-center">Contextual-SQL<br>
-                      <span class="affiliation">Contextual AI</span>
+                    <td class="align-middle text-center">DeepSeek-V3 671B <br>
+                      <span class="affiliation">DeepSeek</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2410.01943" class="paperlink">[Pourreza et al. '24]</a> -->
                     </td>
                     <td class="align-middle text-center"></td>
-                    <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">73.50</td>
-                    <td class="align-middle text-center">75.63</td>
+                    <td class="align-middle text-center">671B</td>
+                    <td class="align-middle text-center">50.64</td>
                   </tr>
 
                   <tr>
                     <td scope="row" class="align-middle text-center counter-cell">
-                      <span class="badge badge-secondary">Dec 17, 2024</span>
+                      <!-- <span class="badge badge-secondary">Feb 27, 2025</span> -->
                     </td>
-                    <td class="align-middle text-center">XiYan-SQL<br>
-                      <span class="affiliation">Alibaba Cloud</span><br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a>
+                    <td class="align-middle text-center">Claude 3.7 Sonnet<br>
+                      <span class="affiliation">Anthropic</span>
                     </td>
-                    <td class="align-middle text-center"><a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td>
+                    <td class="align-middle text-center"></td>
                     <td class="align-middle text-center">UNK</td>
-                    <td class="align-middle text-center">✔️</td>
-                    <td class="align-middle text-center">73.34</td>
-                    <td class="align-middle text-center">75.63</td>
+                    <td class="align-middle text-center">48.09</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <!-- <span class="badge badge-secondary">Dec 17, 2024</span> -->
+                    </td>
+                    <td class="align-middle text-center">DeepSeek-R1 671B<br>
+                      <span class="affiliation">DeepSeek</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a> -->
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <!-- <a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td> -->
+                    <td class="align-middle text-center">671B</td>
+                    <td class="align-middle text-center">44.42</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <!-- <span class="badge badge-secondary">Dec 17, 2024</span> -->
+                    </td>
+                    <td class="align-middle text-center">DeepSeek-R1 32B<br>
+                      <span class="affiliation">DeepSeek</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a> -->
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <!-- <a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td> -->
+                    <td class="align-middle text-center">32B</td>
+                    <td class="align-middle text-center">41.98</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <!-- <span class="badge badge-secondary">Dec 17, 2024</span> -->
+                    </td>
+                    <td class="align-middle text-center">o3-mini<br>
+                      <span class="affiliation">OpenAI</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a> -->
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <!-- <a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td> -->
+                    <td class="align-middle text-center">UNK</td>
+                    <td class="align-middle text-center">27.94</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <!-- <span class="badge badge-secondary">Dec 17, 2024</span> -->
+                    </td>
+                    <td class="align-middle text-center">DeepSeek-Coder-V2 Lite<br>
+                      <span class="affiliation">DeepSeek</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a> -->
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <!-- <a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td> -->
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center">24.84</td>
+                  </tr>
+
+                  <tr>
+                    <td scope="row" class="align-middle text-center counter-cell">
+                      <!-- <span class="badge badge-secondary">Dec 17, 2024</span> -->
+                    </td>
+                    <td class="align-middle text-center">DeepSeek-R1 7B<br>
+                      <span class="affiliation">DeepSeek</span>
+                      <!-- <br><a href="https://arxiv.org/abs/2411.08599" class="paperlink">[Yifu Liu et al. '24]</a> -->
+                    </td>
+                    <td class="align-middle text-center"></td>
+                    <!-- <a href="https://github.com/XGenerationLab/XiYan-SQL">[link]</a></td> -->
+                    <td class="align-middle text-center"></td>
+                    <td class="align-middle text-center">17.03</td>
                   </tr>
 
                   </tbody>
